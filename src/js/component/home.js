@@ -1,24 +1,48 @@
-import React from "react";
+import React, { useEffect, useState, Fragment } from "react";
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
-
+import Bulb from "./bulb.jsx";
 //create your first component
 export function Home() {
+	const [lightColor, setLigthColor] = useState({
+		red: false,
+		orange: false,
+		green: false
+	});
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
+		<Fragment>
+			<Bulb
+				// onClick={() => setClicked2(false)}
+				color={lightColor.red ? "red" : "grey"}
+				onClick={() => {
+					setLigthColor({
+						red: true,
+						orange: false,
+						green: false
+					});
+				}}
+			/>
+			<Bulb
+				color={lightColor.orange ? "orange" : "grey"}
+				onClick={() => {
+					setLigthColor({
+						red: false,
+						orange: true,
+						green: false
+					});
+				}}
+			/>
+			<Bulb
+				color={lightColor.green ? "green" : "grey"}
+				onClick={() => {
+					setLigthColor({
+						red: false,
+						orange: false,
+						green: true
+					});
+				}}
+			/>
+		</Fragment>
 	);
 }
