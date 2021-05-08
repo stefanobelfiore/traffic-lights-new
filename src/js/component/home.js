@@ -12,37 +12,41 @@ export function Home() {
 	});
 	return (
 		<Fragment>
-			<Bulb
-				// onClick={() => setClicked2(false)}
-				color={lightColor.red ? "red" : "grey"}
-				onClick={() => {
-					setLigthColor({
-						red: true,
-						orange: false,
-						green: false
-					});
-				}}
-			/>
-			<Bulb
-				color={lightColor.orange ? "orange" : "grey"}
-				onClick={() => {
-					setLigthColor({
-						red: false,
-						orange: true,
-						green: false
-					});
-				}}
-			/>
-			<Bulb
-				color={lightColor.green ? "green" : "grey"}
-				onClick={() => {
-					setLigthColor({
-						red: false,
-						orange: false,
-						green: true
-					});
-				}}
-			/>
+			<div className="text-center mt-5">
+				<div className="traffic-light">
+					<Bulb
+						// onClick={() => setClicked2(false)}
+						color={lightColor.red ? "red" : "grey"}
+						onClick={() => {
+							setLigthColor({
+								red: true,
+								orange: false,
+								green: false
+							});
+						}}
+					/>
+					<Bulb
+						color={lightColor.orange ? "orange" : "grey"}
+						onClick={() => {
+							setLigthColor({
+								red: false,
+								orange: true,
+								green: false
+							});
+						}}
+					/>
+					<Bulb
+						color={lightColor.green ? "green" : "grey"}
+						onClick={() => {
+							setLigthColor({
+								red: false,
+								orange: false,
+								green: true
+							});
+						}}
+					/>
+				</div>
+			</div>
 		</Fragment>
 	);
 }
